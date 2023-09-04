@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from  './Search';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search placeholder="Search for the city of your choice componente Search 1"/>
+      <Search placeholder="Search for the city of your choice componente Search 2"/>
+      <Search placeholder="Search for the city of your choice componente Search 3"/>
+      <Search placeholder="Search for the city of your choice componente Search 4"/>
     </div>
   );
 }
