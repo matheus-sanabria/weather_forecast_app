@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './App.css';
+
 function Search(props) {
 
     const [city,setCity] = useState('');
@@ -26,19 +28,57 @@ function Search(props) {
                     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
                     weather[0]["icon"]}.svg`;
                     setCity(`
+                    
+                    <div class="searchResult">
+                        <div class="container">
+                            <h3>Tempo real em ${name}, ${sys.country} 
+                                <img style={{width="40px"; height="40px"; margin="10px"}} src="${icon}" />
+                            </h3>
+                        
+                            <div class="_flex _justify-center _align-center">
+                                <img width="120" height="120" src="${icon}">
+                                <span class="">${main.temp}C°</span>
+                            </div>
+                            
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th class="text-left">City:</th>
+                                        <th class="text-right">${name}</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Country:</th>
+                                        <th class="text-right">${sys.country}</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Description:</th>
+                                        <th class="text-right">${weather[0]['description']}</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Sensation:</th>
+                                        <th class="text-right">${main.feels_like}C°</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Humidity:</th>
+                                        <th class="text-right">💧${main.humidity}%</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Minimum Temperature:</th>
+                                        <th class="text-right">${main.temp_min}C°</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Maximum Temperature:</th>
+                                        <th class="text-right">${main.temp_max}C°</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-left">Pressure:</th>
+                                        <th class="text-right">${main.pressure}hPa</th>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
 
-                    <div>
-    
-                    <p>Temperatura: ${main.temp}C°</p>
-    
-                    <p>Pais: ${sys.country}</p>
-    
-                    <p>Cidade: ${name}</p>
-    
-                    <p>Descrição: ${weather[0]['description']}</p>
-    
-                    <img src="${icon}" />
-    
                     </div>
     
                     `);
@@ -67,15 +107,14 @@ function Search(props) {
                 </form>
             </div>{/* container */}
         </div>{/* searchWeather */}
-        <div className='SearchResult'>
-
-        </div>{/* SearchResult */}
-
         {
             (city !== '')?
                 <div dangerouslySetInnerHTML={{__html: city}}/>:
-                <div>Sem resultados</div>
+                <div style={{padding:'10px'}}>Sem resultados</div>
         }
+
+        
+
 
     </div>/* search */
   );

@@ -8,7 +8,7 @@ html,body{height: 100%;}
 
 
 div.container{
-  max-width: 1280px;
+  max-width: 768px;
   padding: 0 4%;
   margin: 0 auto;
   text-align: center;
@@ -26,4 +26,35 @@ div.search h2{
 input.form-control{
   margin-right: 7px;
   border-radius: 0.375rem!important;
+}
+
+div.searchResult{
+  /* background-color: green; */
+  text-align: center;
+  padding: 20px 0;
+}
+
+div.searchResult h3{
+  margin: 0;
+  display: inline-block;
+}
+
+
+div.searchResult p{
+  border-bottom: 1px dashed #ccc;
+  padding: 10px 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+span{
+  font-size: 40px;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
 }
