@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import './App.css';
 
-function Search(props) {
+function Search(props) {/// função Buscar(propriedades)
 
-    const [city,setCity] = useState('');
+    const [city,setCity] = useState('');// constantante cidade, definirCidade = usar estado vazio
 
-    function detectSearch(e){
-        e.preventDefault();
+    function detectSearch(e){// funcao detectar busca (evento)
+        e.preventDefault();//
         // setCity('');
 
-        let currentValue = document.querySelector('input[name=detectSearch').value;
+        let currentValue = document.querySelector('input[name=detectSearch').value;// valorAtual = campo input com nome detectarBusca
         
         // alert(currentValue);
         /*
